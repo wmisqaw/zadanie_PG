@@ -10,8 +10,6 @@ public class DesktopLauncher {
 	private static char[][] words;
 
 	public static void main (String[] arg) {
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new Hello(), config);
 
 		String temp;
 		boolean pom = false;

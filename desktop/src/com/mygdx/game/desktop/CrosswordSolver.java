@@ -181,7 +181,11 @@ public class CrosswordSolver
 
     public static void main(String[] args)
     {
+
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        config.width=1000;
+        config.height=700;
+        config.title = "Crossword";
         new LwjglApplication(new Hello(), config);
 
         int missing_words;

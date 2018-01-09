@@ -17,33 +17,35 @@ public class Hello extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		//img = new Texture("badlogic.jpg");
-		img = new Texture("homer.png");
+		//img = new Texture("homer.png");
 		shapeRenderer = new ShapeRenderer();
 		shapeRenderer.setAutoShapeType(true);
+		img = new Texture("background.jpg");
 	}
 
 	@Override
 	public void render () {
 		Gdx.gl.glClearColor(1, 1, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		batch.begin();
+		batch.draw(img, 0 , 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		batch.end();
 		shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-		shapeRenderer.setColor(0, 1, 0, 1);
-		//shapeRenderer.rect(200, 200, 20, 20);
+		shapeRenderer.setColor(0, 1, 1, 1);
 		for (int x = 0; x < 11; x++)
 		{
 			for (int y = 0; y < 8; y++)
 			{
-				shapeRenderer.rect(Gdx.graphics.getWidth() - (float) (x * 30) , Gdx.graphics.getHeight () - (float) (y * 30), (float) 20, (float) 20);
-				//shapeRenderer.rect((float) (x + 20) , (float) (y + 20) ,(float) 20, (float) 20);
-				//shapeRenderer.setColor(com.badlogic.gdx.graphics.Color.BLACK);
+				shapeRenderer.rect(((Gdx.graphics.getWidth() / 2.0f) + ((5 * 30) / 2.0f)) - (x * 30.0f) , ((Gdx.graphics.getHeight() / 2.0f) + ((2 * 30) / 2.0f)) - (y * 30.0f), 25.0f, 25.0f);
 			}
 		}
-		/*shapeRenderer.setColor(1, 0, 0, 1);
+		shapeRenderer.setColor(1, 0, 0, 1);
 		for (int x = 0; x < 11; x++) {
 			for (int y = 0; y < 8; y++) {
-				shapeRenderer.rect(Gdx.graphics.getWidth() - (float) (x * 30 + 5), Gdx.graphics.getHeight() - (float) (y * 30 + 5), (float) 20, (float) 20);
+				//shapeRenderer.rect(Gdx.graphics.getWidth() - (float) (x * 30 + 5), Gdx.graphics.getHeight() - (float) (y * 30 + 5), 20.0f, 20.0f);
+				shapeRenderer.rect(((Gdx.graphics.getWidth() / 2.0f) + ((10 * 30) / 2.0f)) + (x * 28.0f) , ((Gdx.graphics.getHeight() / 2.0f) + ((7 * 30) / 2.0f)) + (y * 28.0f), 20.0f, 20.0f);
 			}
-		}*/
+		}
 		shapeRenderer.end();
 
 
