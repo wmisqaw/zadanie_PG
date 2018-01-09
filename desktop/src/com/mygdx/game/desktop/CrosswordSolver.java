@@ -304,13 +304,13 @@ public class CrosswordSolver
             cS.searchWords(search);
         }
 
-        while (Arrays.asList(grid1_words).contains(input_data())){
+       /* while (Arrays.asList(grid1_words).contains(input_data())){
             missing_words --;
             if (missing_words == 0){
                 System.out.println("Crossword SOLVED!");
                 break;
             }
-        }
+        }*/
 
 
 
