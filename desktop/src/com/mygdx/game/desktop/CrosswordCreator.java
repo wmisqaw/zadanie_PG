@@ -16,6 +16,7 @@ public class CrosswordCreator {
             }
         }
         //char[][] crossword_grid = sizeChoosing();
+        addLetter();
     }
 
     public static char[][] sizeChoosing(){
@@ -26,6 +27,19 @@ public class CrosswordCreator {
         System.out.println("Columns : ");
         int columns = Integer.parseInt(input.next());
         crossword = new char[rows][columns];
+        return crossword;
+    }
+
+    public static char[][] addLetter(){
+        Scanner addletter = new Scanner(System.in);
+        System.out.println("Enter position of letter.");
+        System.out.println("Row: ");
+        int rows = Integer.parseInt(addletter.next());
+        System.out.println("Column: ");
+        int columns = Integer.parseInt(addletter.next());
+        System.out.println("Letter: ");
+        char letter = addletter.next(".").charAt(0);
+        crossword[rows][columns] = letter;
         return crossword;
     }
 
